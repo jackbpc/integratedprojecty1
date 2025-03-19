@@ -1,6 +1,6 @@
 <?php
 require_once "./etc/config.php";
-
+// Test?
 try {
     // $stories = Story::findAll();
     // $stories = Story::findAll($options = array('limit' => 2));
