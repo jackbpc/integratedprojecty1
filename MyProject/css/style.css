@@ -1,0 +1,236 @@
+p {
+    font-family: "Merriweather", serif;
+    font-size: 14px;
+    margin-bottom: 12px;
+    color:#383838;
+}
+
+body{
+    font-family: "Merriweather";
+}
+
+h3{
+    font-family: "Merriweather", serif;
+    font-size: 36px;
+    line-height: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+img{
+    width:100%;
+    aspect-ratio: 16/9;
+}
+
+.navbar{
+    display: flex;
+    font-size: 20px;
+    gap: 10px;
+    color:white;
+}
+
+.alert {
+    position: relative;
+    padding: .75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+}
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+.error { 
+    color:red
+}
+.form-delete {
+    display: inline;
+}
+
+/* .CRUD{
+    display: flex;
+}
+
+.CRUD li + .CRUD li{
+    margin-left: 10px;
+    border-left: 1px solid white;
+} */
+
+.homeTopics{
+}
+
+.navbarOverall{
+    background-color: purple;
+}
+
+.navbarContent{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* .homeTopics li{
+    margin-right: 10px;
+    border-right: white 1px solid;
+} */
+
+li + li{
+    border-left: 10px;
+    border-left: white 1px solid;
+}
+
+li:hover{
+    text-decoration: underline;
+    background-color: purple;
+}
+
+.topicPolitics{
+    color:rgb(172, 0, 206);
+    font-family: "Merriweather";
+    font-weight: 600;
+}
+
+
+.mediumVerticalStory{
+    display: flex
+;
+    /* background-color: rgb(255, 239, 218);
+    border-bottom: #aaaaaa 1px solid; */
+    /* gap: 10px; */
+    flex-direction: column;
+}
+.mediumVerticalStory .topicTime{
+    display: flex;
+    gap: 5px;
+}
+
+.mediumHorizontalStory{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* border-bottom: 1px #aaaaaa solid; */
+}
+
+.mediumHorizontalStory .left{
+    max-width: 50%;
+}
+
+.mediumHorizontalStory .left img{
+    height: 100%;
+}
+
+.mediumHorizontalStory .right{
+    display: flex;
+    flex-direction: column;
+    max-width: 50%;
+    background-color: rgb(230, 230, 230);
+    justify-content: space-between;
+    padding-right: 5px;
+}
+
+.mediumHorizontalStory .right h3{
+    flex-direction: row;
+    font-size: 24px;
+    line-height: 1.1;
+    margin-left: 10px;
+    font-weight: 400;
+}
+
+.mediumHorizontalStory .right .topic{
+    color: green;
+    margin-left: 10px;
+}
+
+.smallVerticalStory {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.smallVerticalStory h3{
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.1;
+}
+
+.smallVerticalStory p{
+    font-size: 15px;
+}
+
+.smallVerticalStory .content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.smallVerticalStory img{
+    max-height: 150px;
+    width:100%;
+}
+
+.smallVerticalStory .topicTime{
+    font-family: "Roboto";
+    display: flex;
+    align-items: baseline;
+    gap: 3px;
+    color: red;
+}
+
+.smallBasicStory .topicEnvironment{
+    color: green;
+}
+
+.smallBasicStory {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* background-color: rgb(241, 241, 241); */
+    border-bottom: #c3c3c3 solid 1px;
+}
+
+.smallBasicStory h3{
+    font-size: 18px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.1;
+}
+
+.smallBasicStory .content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.smallBasicStory img{
+    max-height: 135px;
+    width:100%;
+}
+
+.smallBasicStory .topicTime{
+    font-family: "Roboto";
+    display: flex;
+    align-items: baseline;
+    gap: 3px;
+}
+
+/* .smallBasicStory + .smallBasicStory {
+    border-left: 1px #c3c3c3 solid;
+    padding-left: 32px;
+} */
+
+.view_story img{
+    width:100%;
+}
+
+
+
+
+
+
+
