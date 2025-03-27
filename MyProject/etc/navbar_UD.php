@@ -20,7 +20,7 @@ catch (Exception $e) {
  ?>
 
 <div class="CRUD">
-    <li><a href="">Edit story</a></li>
+    <li><a href="./edit_story.php?id=<?=$s->id?>">Edit story</a></li>
     <li><a href="">Delete story</a></li>
  </div>
 </ul>

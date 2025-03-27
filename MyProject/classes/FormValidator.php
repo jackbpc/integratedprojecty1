@@ -152,5 +152,6 @@ class FormValidator {
             array_key_exists($key, $_FILES) && 
             $_FILES[$key]['error'] !== UPLOAD_ERR_NO_FILE;
     }
+    
 }
 ?>

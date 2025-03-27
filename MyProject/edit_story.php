@@ -10,38 +10,58 @@ catch (Exception $e) {
     echo $e->getMessage();
     exit();
 }
+
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
+}
+
+try {
+    if ($_SERVER["REQUEST_METHOD"] !== "GET") {
+        throw new Exception("Invalid request method");
+    }
+    if (!array_key_exists("id", $_GET)) {
+        throw new Exception("Invalid request parameters");
+    }
+    $id = $_GET["id"];
+    $story = Story::findById($id);
+    if ($story === null) {
+        throw new Exception("Story not found");
+    }
+}
+catch (Exception $ex) {
+    echo $ex->getMessage();
+    exit();
 }
 ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <title>Form</title>
-        <!-- Call style sheet for flash messages -->
         <link rel="stylesheet" href="./css/styles.css">
+        <style>
+            .error { color: red; }
+        </style>
     </head>
     <body>
-    <!-- Call flash message class to display whether the user entered correct information according to the book form validator. -->
     <?php require './etc/flash_message.php'; ?>
-    <!-- Layout book add form. -->
+    <!-- Layout story add form. -->
     <div class="container">    
         <div class="width-12">
-        <h2>Add Story Form</h2>
-            <form action="store_story.php" method="POST">
+        <h2>Edit Story Form</h2>
+            <form action="update_story.php" method="POST">
                 <p>
                     Headline: 
-                    <input type="text" name="headline" value="<?= old("headline") ?>">
+                    <input type="text" name="headline" value="<?= old("headline", $story->headline) ?>">
                     <span class="error"><?= error("headline") ?><span>
                 </p>
                 <p>
                     Article: 
-                    <input type="text" name="article" value="<?= old("article") ?>">
+                    <input type="text" name="article" value="<?= old("article", $story->article)?>">
                     <span class="error"><?= error("article") ?><span>
                 </p>
                 <p>
                     Image URL: 
-                    <input type="text" name="img_url" id="img_url">
+                    <input type="text" name="img_url" id="img_url" value="<?= old("img_url", $story->img_url)?>">
                     <span class="error"><?= error("img_url") ?><span>
                 </p>
                 <p>
@@ -100,12 +120,12 @@ if (session_status() === PHP_SESSION_NONE) {
             </p>
                 <p>
                     Created at: 
-                    <input type="text" name="created" id="created">
+                    <input type="text" name="created" id="created" value="<?= old("created", $story->created)?>">
                     <span class="error"><?= error("created") ?><span>
                 </p>
                 <p>
                     Updated at: 
-                    <input type="text" name="updated" id="updated">
+                    <input type="text" name="updated" id="updated" value="<?= old("created", $story->created)?>">
                     <span class="error"><?= error("updated") ?><span>
                 </p>
                 <button type="submit">Add</button>
